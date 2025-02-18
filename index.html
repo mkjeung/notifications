@@ -22,6 +22,20 @@
     z-index: 9999;
     cursor: move;
   }
+  
+  .alert-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    background-color: #FDF7DD;
+    border: 2px solid #C0B9A9; 
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    cursor: normal;
+  }
 
   .notification-main {
     display: flex;
@@ -86,7 +100,7 @@
     
     padding: 10px 16px;
     border: 2px solid #B2B2B2;
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 14px;
     cursor: pointer;
   }
@@ -117,6 +131,23 @@
     background-color: #D05147;
     transition: width 0.3s ease;
   }
+  
+  .dismiss-button {
+    padding: 10px 16px;
+    border: 2px solid #B2B2B2;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #D05147;
+    color: #fff;
+    font-family: 'Pixelify Sans'
+  }
+  
+  .alert-options {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
 </style>
 
 <body>
@@ -146,6 +177,25 @@
       <div class="countdown-bar">
         <div class="countdown-progress" id="countdown-progress"></div>
       </div>
+    </div>
+  </div>
+  
+  <div class="alert-popup">
+    <div class="notification-main">
+      <img src="https://i.pinimg.com/1200x/08/0f/a2/080fa25080bc8df482cdd929e2100a58.jpg"
+        alt="Left Icon"
+        class="notification-icon-left"
+      />
+      <div class="notification-text">
+        <h3 class="notification-title">Matthew's Birthday Party 🧑‍💻⚡️⏳⏳⏳</h3>
+        <p class="notification-message">
+          Lebron Lebron Lebron Lebron Lebron Lebron Lebron Lebron Lebron Lebron Lebron Lebron 
+        </p>
+      </div>
+      
+    </div>
+    <div class="alert-options">
+      <button class="dismiss-button" id="accept-button">Dismiss</button>
     </div>
   </div>
   
