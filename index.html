@@ -1,10 +1,9 @@
 <style>
   body {
     display: flex;
-    border-style: solid;
-    font-size: 24px;
   }
-  .notification-popup {
+  
+  .alert-popup {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -15,10 +14,34 @@
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     z-index: 9999;
-    cursor: default;
+    cursor: normal;
+  }
+  
+  .alert-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+  }
+  
+  .alert-button {
+    
+  }
+  
+  .notification-popup {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400;
+    background-color: #fff;
+    border: 2px solid #8adb86; 
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 9999;
+    cursor: move;
   }
 
-  .notification-header {
+  .notification-main {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -65,7 +88,7 @@
     color: #333;
   }
 
-  .notification-body {
+  .notification-options {
     padding: 16px;
   }
 
@@ -100,20 +123,20 @@
     height: 6px; 
     background-color: #e0e0e0;
     border-radius: 3px;
-    overflow: hidden; /* so the progress bar corners stay rounded */
+    overflow: hidden;
   }
 
   .countdown-progress {
-    width: 100%; /* We'll update this with JS as it counts down */
+    width: 100%;
     height: 100%;
     background-color: #4e9eff;
-    transition: width 0.3s ease; /* smooth animation when updating width */
+    transition: width 0.3s ease;
   }
 </style>
 
 <body>
   <div class="notification-popup">
-    <div class="notification-header">
+    <div class="notification-main">
       <img src="https://i.pinimg.com/1200x/08/0f/a2/080fa25080bc8df482cdd929e2100a58.jpg"
         alt="Left Icon"
         class="notification-icon-left"
@@ -130,7 +153,7 @@
         class="notification-icon-right"
       />
     </div>
-    <div class="notification-body">
+    <div class="notification-options">
       <div class="notification-actions">
         <button class="reject-button" id="reject-button">Reject</button>
         <button class="accept-button" id="accept-button">Accept</button>
@@ -140,5 +163,7 @@
       </div>
     </div>
   </div>
+  
+  
   
 </body>
